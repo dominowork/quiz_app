@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Zipping source bundle..."
+      - zip -r application.zip .
+artifacts:
+  files:
+    - application.zip
+
