@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズに挑戦 - クイズアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>クイズアプリ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="quiz.html">クイズに挑戦</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>クイズに挑戦！</h2>
+            <div id="quiz-area">
+                <div class="question-container">
+                    <h3 id="question-text">ここに問題文が表示されます...</h3>
+                    <ul class="options" id="options-list">
+                        <!-- 選択肢はJavaScriptで動的に生成されます -->
+                    </ul>
+                    <button id="submit-answer-btn">解答する</button>
+                </div>
+                <div class="feedback" id="feedback-message" style="display: none;">
+                    <!-- 解答結果がここに表示されます -->
+                </div>
+                <button id="next-question-btn" style="display: none;">次の問題へ</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 クイズアプリ</p>
+    </footer>
+    <script src="quiz_script.js"></script> <!-- quiz.html専用のJSファイル -->
+</body>
+</html>

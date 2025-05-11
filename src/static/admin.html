@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者ページ - クイズアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>クイズアプリ - 管理者</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="quiz.html">クイズに挑戦</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>管理者ページ</h2>
+
+        <section class="admin-section" id="create-question-section">
+            <h3>新しいクイズ問題を作成</h3>
+            <form id="create-question-form">
+                <div>
+                    <label for="question-text-create">問題文:</label>
+                    <textarea id="question-text-create" name="text" rows="3" required></textarea>
+                </div>
+                <h4>選択肢:</h4>
+                <p class="form-hint">正解となる選択肢を1つ選んでください。</p>
+                <div id="options-container-create">
+                    <div class="option-entry">
+                        <input type="text" name="option_text_1" placeholder="選択肢1" required>
+                        <label><input type="radio" name="correct_option_create" value="0" required> 正解</label>
+                    </div>
+                    <div class="option-entry">
+                        <input type="text" name="option_text_2" placeholder="選択肢2" required>
+                        <label><input type="radio" name="correct_option_create" value="1"> 正解</label>
+                    </div>
+                    <div class="option-entry">
+                        <input type="text" name="option_text_3" placeholder="選択肢3">
+                        <label><input type="radio" name="correct_option_create" value="2"> 正解</label>
+                    </div>
+                    <div class="option-entry">
+                        <input type="text" name="option_text_4" placeholder="選択肢4">
+                        <label><input type="radio" name="correct_option_create" value="3"> 正解</label>
+                    </div>
+                </div>
+                <button type="button" id="add-option-btn-create">選択肢を追加</button>
+                <button type="submit">問題を作成</button>
+            </form>
+        </section>
+
+        <section class="admin-section" id="list-questions-section">
+            <h3>登録済みクイズ問題一覧</h3>
+            <table class="admin-table" id="questions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>問題文</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 問題はJavaScriptで動的にここに挿入されます -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="admin-section" id="edit-question-section" style="display:none;">
+            <h3>クイズ問題を編集 (ID: <span id="edit-question-id"></span>)</h3>
+            <form id="edit-question-form">
+                <input type="hidden" id="question-id-edit" name="id">
+                <div>
+                    <label for="question-text-edit">問題文:</label>
+                    <textarea id="question-text-edit" name="text" rows="3" required></textarea>
+                </div>
+                <h4>選択肢:</h4>
+                <div id="options-container-edit">
+                    <!-- 編集用の選択肢はJavaScriptで動的に生成 -->
+                </div>
+                <button type="button" id="add-option-btn-edit">選択肢を追加</button>
+                <button type="submit">更新を保存</button>
+                <button type="button" id="cancel-edit-btn">キャンセル</button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 クイズアプリ</p>
+    </footer>
+    <script src="admin_script.js"></script> <!-- admin.html専用のJSファイル -->
+</body>
+</html>
